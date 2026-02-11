@@ -85,13 +85,22 @@ body {
     width: 100%;
     background: #f5c400;
     display: flex;
-    justify-content: reinforcespace-around;
-    padding: 8px 0;
+    justify-content: space-around; /* diperbaiki */
+    align-items: center; /* tengah vertikal */
+    padding: 10px 0;
 }
 
 .bottom-nav div {
     text-align: center;
     font-size: 12px;
+    display: flex;
+    flex-direction: column; /* icon atas, teks bawah */
+    align-items: center; /* tengah horizontal */
+    justify-content: center;
+}
+
+.bottom-nav div span {
+    margin-top: 3px; /* jarak icon & teks */
 }
 
 .bottom-nav .active {
