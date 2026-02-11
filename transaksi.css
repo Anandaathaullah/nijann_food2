@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #fff;
+}
+
+.container {
+    max-width: 700px;
+    margin: auto;
+    padding: 15px;
+}
+
+/* Section */
+.section {
+    border-bottom: 2px solid #f5c400;
+    padding: 12px 0;
+}
+
+.section h3 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.sub {
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.name {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* Flex */
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Link */
+.link {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+/* Product */
+.product {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.product img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.info h4 {
+    font-size: 14px;
+}
+
+.price {
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+/* Quantity */
+.qty {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.qty button {
+    width: 25px;
+    height: 25px;
+    border: none;
+    background: #f5c400;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.qty span {
+    font-size: 14px;
+}
+
+/* Summary */
+.summary div {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.summary .total {
+    font-weight: bold;
+}
