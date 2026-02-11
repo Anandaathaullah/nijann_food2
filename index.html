@@ -1,212 +1,182 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Nijan</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Login</title>
 
 <style>
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: Arial, sans-serif;
 }
 
-body {
-    background: url('kantin.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: white;
-}
-
-/* HEADER */
-.header {
-    background-color: rgba(226, 223, 6, 0.9);
+.container {
     display: flex;
-    justify-content: space-between;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    background: #ffd43b;
+    padding: 20px;
+}
+
+.top {
+    display: flex;
     align-items: center;
-    padding: 10px 40px;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.back {
+    text-decoration: none;
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
 }
 
 .logo {
-    height: 60px;
+    width: 60px;
 }
 
-.nav a {
-    color: black;
-    text-decoration: none;
-    margin-left: 25px;
-    font-weight: bold;
-    cursor: pointer;
+/* Menu */
+.menu {
+    list-style: none;
 }
 
-/* HERO */
-.hero {
-    height: 85vh;
+.menu li {
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: rgba(0,0,0,0.5);
+    margin-bottom: 15px;
 }
 
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.btn {
-    background-color: #e2df06;
-    color: black;
-    padding: 0.8rem 1.5rem;
-    border-radius: 25px;
-    border: none;
-    font-weight: bold;
+.menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
     cursor: pointer;
 }
 
-/* FORM */
-.form-section {
-    display: none;
-    min-height: 100vh;
-    background: rgba(0,0,0,0.7);
+.dot {
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Content */
+.content {
+    flex: 1;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.form-box {
-    background: #222;
-    padding: 30px;
-    border-radius: 8px;
-    width: 320px;
+.login-box {
+    width: 350px;
+    text-align: center;
 }
 
-.form-box h2 {
-    text-align: center;
+.login-box h2 {
+    margin-bottom: 25px;
+    font-weight: normal;
+}
+
+/* Form */
+.login-box label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 10px;
     margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
 }
 
-.form-box input {
+/* Button */
+.login-box button {
     width: 100%;
     padding: 10px;
-    margin-bottom: 12px;
-}
-
-.form-box button {
-    width: 100%;
-    padding: 10px;
-    background: #e2df06;
     border: none;
-    font-weight: bold;
+    background: #f2f2f2;
+    border-radius: 6px;
     cursor: pointer;
 }
 
-.form-box p {
-    margin-top: 10px;
-    text-align: center;
-    font-size: 14px;
-}
-
-.form-box a {
-    color: #e2df06;
-    cursor: pointer;
-}
-
-/* FOOTER */
-.footer {
-    background: #111;
-    text-align: center;
-    padding: 1rem;
+.login-box button:hover {
+    background: #e0e0e0;
 }
 </style>
 </head>
 
 <body>
 
-<!-- ================= LANDING PAGE ================= -->
-<div id="landing">
-<header class="header">
-    <img src="logo.png" class="logo" alt="Nijan">
-    <nav class="nav">
-        <a onclick="showLanding()">Beranda</a>
-        <a onclick="showLogin()">Login</a>
-        <a onclick="showRegister()">Daftar</a>
-    </nav>
-</header>
+<div class="container">
 
-<section class="hero">
-    <div>
-        <h1>Nikmati Makanan Favoritmu dengan Nijan</h1>
-        <p>Antar makanan dari restoran terbaik langsung ke pintu rumahmu</p><br>
-        <button class="btn" onclick="showLogin()">LOGIN</button>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="top">
+            <a class="back" onclick="goHome()">&#8592;</a>
+            <img src="logo.png" class="logo" alt="Logo">
+        </div>
+
+        <ul class="menu">
+            <li><span class="dot"></span><a onclick="goHome()">Halaman utama</a></li>
+            <li><span class="dot"></span><a onclick="goRegister()">Daftar</a></li>
+        </ul>
     </div>
-</section>
 
-<footer class="footer">
-    <p>&copy; 2026 Nijan. All rights reserved.</p>
-</footer>
+    <!-- Content -->
+    <div class="content">
+        <div class="login-box">
+            <h2>LOGIN</h2>
+
+            <!-- ❌ tidak pakai POST -->
+            <label>Username</label>
+            <input type="text" id="username" placeholder="Username">
+
+            <label>Password</label>
+            <input type="password" id="password" placeholder="Password">
+
+            <button onclick="login()">Masuk</button>
+        </div>
+    </div>
+
 </div>
 
-<!-- ================= LOGIN ================= -->
-<div id="login" class="form-section">
-    <div class="form-box">
-        <h2>LOGIN</h2>
-        <input type="text" id="loginUser" placeholder="Username">
-        <input type="password" placeholder="Password">
-        <button onclick="login()">Masuk</button>
-        <p>Belum punya akun? <a onclick="showRegister()">Daftar</a></p>
-    </div>
-</div>
-
-<!-- ================= DAFTAR ================= -->
-<div id="register" class="form-section">
-    <div class="form-box">
-        <h2>DAFTAR</h2>
-        <input type="text" placeholder="Username">
-        <input type="email" placeholder="Email">
-        <input type="password" placeholder="Password">
-        <input type="password" placeholder="Ulangi Password">
-        <button onclick="showLogin()">Daftar</button>
-        <p>Sudah punya akun? <a onclick="showLogin()">Login</a></p>
-    </div>
-</div>
-
-<!-- ================= JAVASCRIPT ================= -->
 <script>
-const landing = document.getElementById("landing");
-const loginPage = document.getElementById("login");
-const registerPage = document.getElementById("register");
-
-function showLanding() {
-    landing.style.display = "block";
-    loginPage.style.display = "none";
-    registerPage.style.display = "none";
-}
-
-function showLogin() {
-    landing.style.display = "none";
-    loginPage.style.display = "flex";
-    registerPage.style.display = "none";
-}
-
-function showRegister() {
-    landing.style.display = "none";
-    loginPage.style.display = "none";
-    registerPage.style.display = "flex";
-}
-
 function login() {
-    const user = document.getElementById("loginUser").value;
-    if (user === "") {
-        alert("Username wajib diisi");
+    const user = document.getElementById("username").value;
+    const pass = document.getElementById("password").value;
+
+    if (user === "" || pass === "") {
+        alert("Username dan password wajib diisi");
         return;
     }
+
+    // simulasi login
+    localStorage.setItem("username", user);
     alert("Login berhasil (simulasi)");
-    showLanding();
+    window.location.href = "index.html"; // balik ke landing
 }
 
-/* default */
-showLanding();
+function goHome() {
+    window.location.href = "index.html";
+}
+
+function goRegister() {
+    window.location.href = "register.html"; // kalau nanti ada
+}
 </script>
 
 </body>
