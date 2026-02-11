@@ -3,7 +3,116 @@
     <head>
         <meta charset="UTF-8">
         <title>Login</title>
-        <link rel="stylesheet" href="style.css">
+        <style>
+            * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    background: #ffd43b;
+    padding: 20px;
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.back {
+    text-decoration: none;
+    color: #fff;
+    font-size: 22px;
+}
+
+.logo {
+    width: 60px;
+}
+
+/* Menu */
+.menu {
+    list-style: none;
+}
+
+.menu li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Content */
+.content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    width: 350px;
+    text-align: center;
+}
+
+.login-box h2 {
+    margin-bottom: 25px;
+    font-weight: normal;
+}
+
+/* Form */
+.login-box label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+/* Button */
+.login-box button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #f2f2f2;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.login-box button:hover {
+    background: #e0e0e0;
+}
+        </style>
     </head>
     <body>
 
@@ -43,3 +152,4 @@
 
     </body>
     </html>
+
