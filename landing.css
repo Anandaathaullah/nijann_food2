@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: url('kantin.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+}
+
+/* HEADER */
+.header {
+    background-color: rgba(226, 223, 6, 0.9);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+}
+
+.logo {
+    height: 60px;
+    width: auto;
+}
+
+.nav a {
+    color: black;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: bold;
+}
+
+/* HERO */
+.hero {
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgb(255, 238, 0);
+    background: rgba(0,0,0,0.5); /* biar teks kebaca */
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn-login {
+    background-color: #e2df06;
+    color: black;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* SECTION */
+.about, .contact {
+    padding: 3rem 2rem;
+    text-align: center;
+    background: rgba(0,0,0,0.6);
+}
+
+/* FOOTER */
+.footer {
+    background-color: #111;
+    text-align: center;
+    padding: 1rem;
+}
