@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Nijan</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: url('kantin.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+}
+
+/* HEADER */
+.header {
+    background-color: rgba(226, 223, 6, 0.9);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+}
+
+.logo {
+    height: 60px;
+}
+
+.nav a {
+    color: black;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: bold;
+}
+
+/* HERO */
+.hero {
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: rgba(0,0,0,0.5);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    background-color: #e2df06;
+    color: black;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* FORM */
+.form-section {
+    display: none;
+    min-height: 100vh;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.form-box {
+    background: #222;
+    padding: 30px;
+    border-radius: 8px;
+    width: 300px;
+}
+
+.form-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+}
+
+.form-box button {
+    width: 100%;
+    padding: 10px;
+    background: #e2df06;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form-box p {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.form-box a {
+    color: #e2df06;
+    cursor: pointer;
+}
+
+/* FOOTER */
+.footer {
+    background: #111;
+    text-align: center;
+    padding: 1rem;
+}
+</style>
+</head>
+
+<body>
+
+<!-- LANDING PAGE -->
+<div id="landing">
+<header class="header">
+    <img src="logo.png" class="logo">
+    <nav class="nav">
+        <a onclick="showLanding()">Beranda</a>
+        <a onclick="showLogin()">Login</a>
+        <a onclick="showRegister()">Daftar</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div>
+        <h1>Nikmati Makanan Favoritmu dengan Nijan</h1>
+        <p>Antar makanan dari restoran terbaik langsung ke pintu rumahmu</p><br>
+        <button class="btn" onclick="showLogin()">LOGIN</button>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>&copy; 2026 Nijan. All rights reserved.</p>
+</footer>
+</div>
+
+<!-- LOGIN -->
+<div id="login" class="form-section">
+    <div class="form-box">
+        <h2>LOGIN</h2>
+        <input type="text" id="loginUser" placeholder="Username">
+        <input type="password" placeholder="Password">
+        <button onclick="login()">Masuk</button>
+        <p>Belum punya akun? <a onclick="showRegister()">Daftar</a></p>
+    </div>
+</div>
+
+<!-- DAFTAR -->
+<div id="register" class="form-section">
+    <div class="form-box">
+        <h2>DAFTAR</h2>
+        <input type="text" placeholder="Username">
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <input type="password" placeholder="Ulangi Password">
+        <button onclick="showLogin()">Daftar</button>
+        <p>Sudah punya akun? <a onclick="showLogin()">Login</a></p>
+    </div>
+</div>
+
+<script>
+function showLanding() {
+    landing.style.display = "block";
+    login.style.display = "none";
+    register.style.display = "none";
+}
+
+function showLogin() {
+    landing.style.display = "none";
+    login.style.display = "flex";
+    register.style.display = "none";
+}
+
+function showRegister() {
+    landing.style.display = "none";
+    login.style.display = "none";
+    register.style.display = "flex";
+}
+
+function login() {
+    const user = document.getElementById("loginUser").value;
+    if(user === ""){
+        alert("Username wajib diisi");
+        return;
+    }
+    alert("Login berhasil (simulasi)");
+    showLanding();
+}
+</script>
+
+</body>
+</html>
