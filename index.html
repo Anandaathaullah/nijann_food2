@@ -1,183 +1,139 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Login</title>
-
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-.container {
-    display: flex;
-    height: 100vh;
-}
-
-/* Sidebar */
-.sidebar {
-    width: 220px;
-    background: #ffd43b;
-    padding: 20px;
-}
-
-.top {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 30px;
-}
-
-.back {
-    text-decoration: none;
-    color: #fff;
-    font-size: 22px;
-    cursor: pointer;
-}
-
-.logo {
-    width: 60px;
-}
-
-/* Menu */
-.menu {
-    list-style: none;
-}
-
-.menu li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.menu a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-.dot {
-    width: 8px;
-    height: 8px;
-    background: #fff;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-/* Content */
-.content {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.login-box {
-    width: 350px;
-    text-align: center;
-}
-
-.login-box h2 {
-    margin-bottom: 25px;
-    font-weight: normal;
-}
-
-/* Form */
-.login-box label {
-    display: block;
-    text-align: left;
-    margin-bottom: 5px;
-    font-size: 13px;
-}
-
-.login-box input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-}
-
-/* Button */
-.login-box button {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    background: #f2f2f2;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-.login-box button:hover {
-    background: #e0e0e0;
-}
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <div class="top">
-            <a class="back" onclick="goHome()">&#8592;</a>
-            <img src="logo.png" class="logo" alt="Logo">
-        </div>
-
-        <ul class="menu">
-            <li><span class="dot"></span><a onclick="goHome()">Halaman utama</a></li>
-            <li><span class="dot"></span><a onclick="goRegister()">Daftar</a></li>
-        </ul>
-    </div>
-
-    <!-- Content -->
-    <div class="content">
-        <div class="login-box">
-            <h2>LOGIN</h2>
-
-            <!-- ❌ tidak pakai POST -->
-            <label>Username</label>
-            <input type="text" id="username" placeholder="Username">
-
-            <label>Password</label>
-            <input type="password" id="password" placeholder="Password">
-
-            <button onclick="login()">Masuk</button>
-        </div>
-    </div>
-
-</div>
-
-<script>
-function login() {
-    const user = document.getElementById("username").value;
-    const pass = document.getElementById("password").value;
-
-    if (user === "" || pass === "") {
-        alert("Username dan password wajib diisi");
-        return;
+  <meta charset="UTF-8">
+  <title>Landing & Login</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
     }
 
-    // simulasi login
-    localStorage.setItem("username", user);
-    alert("Login berhasil (simulasi)");
-    window.location.href = "index.html"; // balik ke landing
-}
+    body {
+      background-color: #f5f5f5;
+    }
 
-function goHome() {
-    window.location.href = "index.html";
-}
+    /* ================= LANDING PAGE ================= */
+    #landing {
+      height: 100vh;
+      background: linear-gradient(to right, #facc15, #fde047);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
 
-function goRegister() {
-    window.location.href = "register.html"; // kalau nanti ada
-}
-</script>
+    #landing h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    #landing p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .btn-login {
+      padding: 12px 30px;
+      font-size: 16px;
+      border: none;
+      background-color: #000;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .btn-login:hover {
+      background-color: #333;
+    }
+
+    /* ================= LOGIN PAGE ================= */
+    #login {
+      display: none;
+      height: 100vh;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 40%;
+      background-color: #facc15;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      font-weight: bold;
+    }
+
+    .login-form {
+      width: 60%;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .login-box {
+      width: 300px;
+    }
+
+    .login-box h2 {
+      margin-bottom: 20px;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+    }
+
+    .login-box button {
+      width: 100%;
+      padding: 10px;
+      background-color: #facc15;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .login-box button:hover {
+      background-color: #eab308;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LANDING PAGE -->
+  <section id="landing">
+    <h1>Welcome to Kantin Online</h1>
+    <p>Pesan makanan lebih cepat & mudah</p>
+    <button class="btn-login" onclick="showLogin()">LOGIN</button>
+  </section>
+
+  <!-- LOGIN PAGE -->
+  <section id="login">
+    <div class="sidebar">
+      KANTIN
+    </div>
+
+    <div class="login-form">
+      <div class="login-box">
+        <h2>Login</h2>
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password">
+        <button>Masuk</button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function showLogin() {
+      document.getElementById("landing").style.display = "none";
+      document.getElementById("login").style.display = "flex";
+    }
+  </script>
 
 </body>
 </html>
